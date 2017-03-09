@@ -1,0 +1,34 @@
+classdef WIPSPiccoloMesher < handle
+    %WIPSPiccoloMesher. For a given airfoil ,piccolotube configuration and 
+    
+    properties
+        airfoil,            % Airfoil Object
+        piccoloTube;        % PiccoloTube Object
+    end
+    
+    methods
+        % Constructor
+        function obj = WIPSanalysis(airfoil, piccoloTube)
+            % Check if the airfoil is an airfoil object
+            if (~isa(airfoil,'Airfoil'))
+                error('Not an airfoil object!')
+            end
+            obj.airfoil = airfoil;
+            
+            % Check if the piccoloTube is a piccoloTube object
+            if (~isa(piccoloTube,'piccoloTube'))
+                error('Not a piccoloTube object!')
+            end
+            obj.piccoloTube = piccoloTube;
+        end
+        
+        function analyse(obj, upAngle, downAngle)
+            % The upAngle and the Down angle determines the rotational
+            % angle used for cutting the airfoil, for the analysis mesh.
+            
+            
+        end
+    end
+    
+end
+
